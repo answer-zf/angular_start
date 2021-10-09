@@ -4,19 +4,19 @@ import { BrowserModule } from '@angular/platform-browser'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { TopBarComponent } from './top-bar/top-bar.component'
+import { ProductListComponent } from './product-list/product-list.component'
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component'
+import { ProductDetailsComponent } from './product-details/product-details.component'
 
-// const ROUTES: Routes = [{ path: '' }]
+const ROUTES: Routes = [
+  { path: '', component: ProductListComponent },
+  { path: 'products/:productId', component: ProductDetailsComponent },
+]
 
 @NgModule({
-  declarations: [AppComponent, TopBarComponent, ProductListComponent, ProductAlertsComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    // RouterModule.forRoot(ROUTES)
-  ],
+  declarations: [AppComponent, TopBarComponent, ProductListComponent, ProductAlertsComponent, ProductDetailsComponent],
+  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(ROUTES)],
   providers: [],
   bootstrap: [AppComponent],
 })

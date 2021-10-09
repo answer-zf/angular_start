@@ -14,6 +14,7 @@ export class ProductListComponent implements OnInit {
     window.alert('The product has been shared!')
   }
 
+  // 子 -> 父 传参
   onNotify(e: any) {
     window.alert(e)
   }
